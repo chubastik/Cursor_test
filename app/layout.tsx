@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
+import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-manrope",
+});
 
 export const metadata: Metadata = {
-  title: "Cursor Test",
-  description: "Первый сайт для мастер-класса летней школы",
+  title: "FiberTech Support — техподдержка монтажников связи",
+  description:
+    "Портал технической поддержки для техников сервиса: подключение интернета, кабель, оптика, диагностика и чек-листы выезда.",
 };
 
 export default function RootLayout({
@@ -12,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body style={{ fontFamily: "system-ui, sans-serif", margin: 0 }}>
-        {children}
-      </body>
+      <body className={`${manrope.variable} font-sans`}>{children}</body>
     </html>
   );
 }

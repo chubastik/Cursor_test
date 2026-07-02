@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-400/30 text-white;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-size: 48px 48px;
+  }
+}
